@@ -1,6 +1,6 @@
 package com.nicetoh8u.petclinic.model;
 
-public class PetType {
+public class PetType extends BaseEntity {
 
     private String name;
 
