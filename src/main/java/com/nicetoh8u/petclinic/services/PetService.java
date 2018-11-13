@@ -1,8 +1,6 @@
-package com.nicetoh8u.petclinic.Services;
+package com.nicetoh8u.petclinic.services;
 
 import com.nicetoh8u.petclinic.model.Pet;
-
-import java.util.Set;
 
 public interface PetService extends CrudService <Pet,Long> {
 

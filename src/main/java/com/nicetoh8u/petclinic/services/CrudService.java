@@ -1,4 +1,4 @@
-package com.nicetoh8u.petclinic.Services;
+package com.nicetoh8u.petclinic.services;
 
 import java.util.Set;
 

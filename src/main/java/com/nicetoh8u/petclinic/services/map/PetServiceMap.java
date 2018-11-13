@@ -1,11 +1,13 @@
-package com.nicetoh8u.petclinic.Services.map;
+package com.nicetoh8u.petclinic.services.map;
 
-import com.nicetoh8u.petclinic.Services.CrudService;
 import com.nicetoh8u.petclinic.model.Pet;
+import com.nicetoh8u.petclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbtractMapService<Pet,Long> implements CrudService<Pet,Long> {
+@Service
+public class PetServiceMap extends AbtractMapService<Pet,Long> implements PetService {
 
 
     @Override
@@ -15,7 +17,7 @@ public class PetServiceMap extends AbtractMapService<Pet,Long> implements CrudSe
 
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
     @Override
