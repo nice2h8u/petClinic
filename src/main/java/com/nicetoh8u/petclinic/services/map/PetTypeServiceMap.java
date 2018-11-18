@@ -1,27 +1,25 @@
 package com.nicetoh8u.petclinic.services.map;
 
-import com.nicetoh8u.petclinic.model.Pet;
-import com.nicetoh8u.petclinic.services.PetService;
+import com.nicetoh8u.petclinic.model.PetType;
+import com.nicetoh8u.petclinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class PetServiceMap extends AbtractMapService<Pet,Long> implements PetService {
-
-
+public class PetTypeServiceMap extends AbtractMapService<PetType,Long> implements PetTypeService {
     @Override
-    public Pet findById(Long id) {
+    public PetType findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public PetType save(PetType object) {
         return super.save(object);
     }
 
     @Override
-    public Set<Pet> findAll() {
+    public Set<PetType> findAll() {
         return super.findAll();
     }
     @Override
@@ -29,7 +27,7 @@ public class PetServiceMap extends AbtractMapService<Pet,Long> implements PetSer
         super.deleteByID(aLong);
     }
     @Override
-    public void delete(Pet object) {
-        super.delete(object);
+    public void delete(PetType object) {
+            super.delete(object);
     }
 }
