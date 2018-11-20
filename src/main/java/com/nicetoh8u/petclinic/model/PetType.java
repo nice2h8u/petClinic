@@ -1,5 +1,8 @@
 package com.nicetoh8u.petclinic.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class PetType extends BaseEntity {
 
     private String name;
