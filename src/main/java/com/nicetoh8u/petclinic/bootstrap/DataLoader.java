@@ -1,10 +1,7 @@
 package com.nicetoh8u.petclinic.bootstrap;
 
 import com.nicetoh8u.petclinic.model.*;
-import com.nicetoh8u.petclinic.services.OwnerService;
-import com.nicetoh8u.petclinic.services.PetTypeService;
-import com.nicetoh8u.petclinic.services.SpecialityService;
-import com.nicetoh8u.petclinic.services.VetService;
+import com.nicetoh8u.petclinic.services.*;
 import com.nicetoh8u.petclinic.services.map.OwnerServiceMap;
 import com.nicetoh8u.petclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
@@ -19,12 +16,17 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerService, VetService vetService,
+                      PetTypeService petTypeService, SpecialityService specialityService,
+                      VisitService visitService) {
+
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -86,6 +88,13 @@ public class DataLoader implements CommandLineRunner {
         djimPet.setOwner(ownerService.findById(2L));
         djimPet.setName("Murka");
         ownerService.findById(2L).getPets().add(djimPet);
+
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(ilyasPet);
+        catVisit.setDescription("myau");
+        catVisit.setLocalDate(LocalDate.now());
+        visitService.save(catVisit);
 
 
         Vet vet = new Vet();
