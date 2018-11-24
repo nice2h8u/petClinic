@@ -7,7 +7,7 @@ import javax.validation.constraints.Email;
 import java.time.LocalDate;
 
 @Entity
-public class Visit {
+public class Visit extends BaseEntity {
 
     private LocalDate localDate;
     private String description;
