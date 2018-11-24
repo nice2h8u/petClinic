@@ -5,11 +5,13 @@ import com.nicetoh8u.petclinic.services.*;
 import com.nicetoh8u.petclinic.services.map.OwnerServiceMap;
 import com.nicetoh8u.petclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
+@Profile({"default","map"})
 public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
