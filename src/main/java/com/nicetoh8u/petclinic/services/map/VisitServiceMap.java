@@ -18,7 +18,7 @@ public class VisitServiceMap extends AbtractMapService<Visit, Long> implements V
 
     @Override
     public Visit save(Visit object) {
-        if (object.getPet() == null || object.getPet().getOwner() == null || object.getPet().getId() == null)
+        if (object.getPet() == null || object.getPet().getOwner() == null )
             throw new RuntimeException("invalid visit");
 
         return super.save(object);

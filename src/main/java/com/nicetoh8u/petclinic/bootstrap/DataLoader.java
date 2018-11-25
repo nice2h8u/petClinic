@@ -7,10 +7,12 @@ import com.nicetoh8u.petclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
 @Component
+
 @Profile({"default","map"})
 public class DataLoader implements CommandLineRunner {
 
@@ -32,6 +34,7 @@ public class DataLoader implements CommandLineRunner {
     }
 
     @Override
+    @Transactional
     public void run(String... args) throws Exception {
         if (petTypeService.findAll().size() == 0)
             loadData();
