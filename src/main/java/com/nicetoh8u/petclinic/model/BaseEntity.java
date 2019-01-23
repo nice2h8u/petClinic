@@ -9,7 +9,10 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @MappedSuperclass
 public class BaseEntity implements Serializable {
 
