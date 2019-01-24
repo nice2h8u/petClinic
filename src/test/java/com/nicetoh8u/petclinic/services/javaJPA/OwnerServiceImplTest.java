@@ -89,7 +89,7 @@ class OwnerServiceImplTest {
     void findAll() {
 
         Set<Owner> owners = new HashSet<>();
-        owners.add(Owner.builder().id(1L).build());
+        owners.add(Owner.builder().id(1L).lastName("g").build());
         owners.add(Owner.builder().id(2L).build());
 
         Mockito.when(ownerRepository.findAll()).thenReturn(owners);
